@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 3rd Anniversary ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffccd5;
+            font-family: 'Dancing Script', cursive;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 3rem;
+            color: #b3005e;
+        }
+        p {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .heart {
+            font-size: 3rem;
+            color: red;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #333;
+        }
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        #popup img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="front-page">
+        <h1>Our Beautiful Journey ❤️</h1>
+        <p>Hi, My Duniyaa - the first moment we met, to every laugh, every adventure, and every special moment we've shared—our love has only grown stronger.You were the reason I could survive my tenure here and could enjoy it to my fullest.
+           I want you to remember that I'm always there for you, and gonna miss you a lott. I always thank god, for giving me such a beautiful and wonderful person inside out.
+           You are the sky and I'm the star, see even are names incline each other. I'm a really lucky person to have you in my life. These 3 years have been magical and I can't wait to spend my lifetime with you!.
+            I LOVE YOU💕</p>
+        <button onclick="showMainPage()">Continue</button>
+    </div>
+    
+    <div class="container" id="main-page" style="display: none;">
+        <h1>Happy 3rd Anniversary, My Love! ❤️</h1>
+        <p>Would you stay with me forever? 💖</p>
+        <div class="heart">❤️</div>
+        <div class="button-container">
+            <button onclick="showPopup()">YES</button>
+            <button id="no-btn" onmouseover="moveNoButton()">NO</button>
+        </div>
+    </div>
+    
+    <div id="popup">
+        <h2>Yay! Forever together! ❤️</h2>
+        <img src="qrcode_drive.google.com (1).png" alt="QR Code">
+        <p>Scan this to continue our journey! 💕</p>
+        <button onclick="hidePopup()">Close</button>
+    </div>
+    
+    <script>
+        function showMainPage() {
+            document.getElementById('front-page').style.display = 'none';
+            document.getElementById('main-page').style.display = 'block';
+        }
+        
+        function moveNoButton() {
+            let btn = document.getElementById("no-btn");
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            btn.style.position = "absolute";
+            btn.style.left = `${x}px`;
+            btn.style.top = `${y}px`;
+        }
+        
+        function showPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+        
+        function hidePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+</body>
+</html>
